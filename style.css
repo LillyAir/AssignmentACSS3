@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,100&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;   
+}
+
+body {
+    padding: 60px; 
+}
+
+header.flex-container {
+    display: flex;
+}
+
+header.flex-container > h2 {
+    font-size: larger;
+    font-weight: 200;
+    color: rgb(139, 138, 138);
+    margin-bottom: 40px;
+}
+
+main.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 60px;
+}
+
+main .card {
+    border: 1px solid rgb(139, 138, 138);
+    border-radius: 8px;
+}
+
+main .card img {
+    background: rgb(116, 166, 223);
+    width: 100%;
+}
+
+main .card p {
+    color: rgb(139, 138, 138);
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+main .text {
+    grid-column: span 5;
+    color: rgb(139, 138, 138);
+    margin-top: 20px;
+}
+
+/* responsive design */
+@media  screen  and (max-width: 960px) {
+    main.grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 5fr;
+        gap: 60px;        
+    }
+    main .text {
+    grid-column: span 3;
+    }
+}
+    
+@media  screen  and (max-width: 680px) {
+    header.flex-container > h2 {
+        font-size: 28px;
+    }
+    main.grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 1fr;
+    }
+    main .card p {
+        font-size: 18px;
+    }
+    main .text {
+        grid-column: span 1;
+        font-size: 22px;
+    }
+}
